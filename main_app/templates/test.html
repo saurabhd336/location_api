@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>My First Google Map</h1>
+  <div id="map" style="width:100%;height:400px;"></div>
+
+  <script>
+  function myMap() {
+    var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+    var mapCanvas = document.getElementById("map");
+    var mapOptions = {center: myCenter, zoom: 5};
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+    var marker = new google.maps.Marker({position:myCenter});
+    marker.setMap(map);
+  }
+  </script>
+
+ <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMxx_cAy6rKCakngbQ_U8cqNYkVgu3S68&callback=initMap">
+    </script>
+
+</body>
+<script>
+// function update_map(lat, long) {
+//     var latlng = new google.maps.LatLng(lat, long);
+//     marker.setPosition(latlng);
+//     myMap();
+// }
+
+// function executeQuery() {
+//   $.ajax({
+//     url: 'http://127.0.0.1:8000/get_cords',
+//     success: function(data) {
+//       // document.getElementById("time").innerHTML = data['timestamp'];
+//       // document.getElementById("lat").innerHTML = data['latitude'];
+//       // document.getElementById("long").innerHTML = data['longitude']
+//       update_map(parseFloat(data['latitude']), parseFloat(data['longitude']));
+//       //update_cords()
+//       // do something with the return value here if you like
+//     }
+//   });
+//   setTimeout(executeQuery, 5000); // you could choose not to continue on failure...
+// }
+
+// $(document).ready(function() {
+//   // run the first time; all subsequent calls will take care of themselves
+//   setTimeout(executeQuery, 5000);
+// });
+</script>
+</html>
